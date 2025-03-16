@@ -70,7 +70,6 @@ class MediaDatabase:
             self.generate_views()
 
     def top_titles(self, n=5):
-        # Sort media by the number of plays (descending) and return the top N
         sorted_media = sorted(self.media_list, key=lambda m: m.plays, reverse=True)
         return sorted_media[:n]
     
@@ -79,7 +78,6 @@ class MediaDatabase:
             print(media)
 
 
-# Example Usage:
 db = MediaDatabase()
 db.add_media(Movie("Inception", 2010, "Sci-Fi"))
 db.add_media(Movie("The Dark Knight", 2008, "Action"))
@@ -88,10 +86,8 @@ db.add_media(Movie("Interstellar", 2014, "Sci-Fi"))
 db.add_media(TVSeries("Breaking Bad", 2008, "Crime", 62, 5))
 db.add_media(TVSeries("Game of Thrones", 2011, "Fantasy", 73, 8))
 
-# Generate views for media
 db.generate_multiple_views()
 
-# Display top 3 most popular titles
 top_titles = db.top_titles(3)
 print("\nTop 3 Most Popular Titles:")
 for media in top_titles:
